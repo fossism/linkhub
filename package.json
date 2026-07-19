@@ -1,0 +1,17 @@
+{
+  "name": "linkhub",
+  "version": "1.0.0",
+  "description": "LinkHub: Privacy-First AI Auto-Categorizing Link Manager",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "backend": "npm --prefix backend run dev",
+    "frontend": "npm --prefix frontend run dev",
+    "db:up": "docker compose up -d db redis minio",
+    "docker:up": "docker compose up --build",
+    "docker:down": "docker compose down"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
