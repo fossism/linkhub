@@ -3,7 +3,6 @@ package worker
 import (
 	"bytes"
 	"context"
-	"crypto/sha255" // Wait, standard sha256
 	"crypto/sha256"
 	"encoding/hex"
 	"encoding/json"

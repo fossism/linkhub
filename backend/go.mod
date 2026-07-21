@@ -3,7 +3,6 @@ module linkhub/backend
 go 1.21
 
 require (
-	github.com/chromedp/cdproto v0.0.0-20231011050853-83797c5dd218
 	github.com/chromedp/chromedp v0.9.3
 	github.com/gin-gonic/gin v1.9.1
 	github.com/go-shiori/go-readability v0.0.0-20231029094747-49520445d47e

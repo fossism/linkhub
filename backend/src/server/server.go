@@ -41,6 +41,10 @@ type User struct {
 	MasterKeySalt string `json:"masterKeySalt"`
 }
 
+type EmbedResponse struct {
+	Embedding []float32 `json:"embedding"`
+}
+
 type Bookmark struct {
 	ID           int       `json:"id"`
 	UserID       int       `json:"userId"`
@@ -408,7 +412,7 @@ func getBookmarks(c *gin.Context) {
 
 	// 1. Vector Semantic Cosine Search
 	if q != "" && semantic == "true" {
-		queryVector, errEmbed := getOllamaEmbedding(q)
+		queryVector, errEmbed := getOllamaEmbedding(q, "")
 		if errEmbed != nil {
 			c.JSON(http.StatusInternalServerError, gin.H{"error": "AI embedding server unavailable."})
 			return
