@@ -1,0 +1,18 @@
+src/App.tsx(63,32): error TS2339: Property 'env' does not exist on type 'ImportMeta'.
+src/components/Dashboard.tsx(4,39): error TS6133: 'Tag' is declared but its value is never read.
+src/crypto.ts(87,5): error TS2769: No overload matches this call.
+  The last overload gave the following error.
+    Argument of type 'Uint8Array<ArrayBufferLike>' is not assignable to parameter of type 'BufferSource'.
+      Type 'Uint8Array<ArrayBufferLike>' is not assignable to type 'ArrayBufferView<ArrayBuffer>'.
+        Types of property 'buffer' are incompatible.
+          Type 'ArrayBufferLike' is not assignable to type 'ArrayBuffer'.
+            Type 'SharedArrayBuffer' is not assignable to type 'ArrayBuffer'.
+              Types of property '[Symbol.toStringTag]' are incompatible.
+                Type '"SharedArrayBuffer"' is not assignable to type '"ArrayBuffer"'.
+src/crypto.ts(97,7): error TS2322: Type 'Uint8Array<ArrayBufferLike>' is not assignable to type 'BufferSource'.
+  Type 'Uint8Array<ArrayBufferLike>' is not assignable to type 'ArrayBufferView<ArrayBuffer>'.
+    Types of property 'buffer' are incompatible.
+      Type 'ArrayBufferLike' is not assignable to type 'ArrayBuffer'.
+        Type 'SharedArrayBuffer' is not assignable to type 'ArrayBuffer'.
+          Types of property '[Symbol.toStringTag]' are incompatible.
+            Type '"SharedArrayBuffer"' is not assignable to type '"ArrayBuffer"'.
