@@ -6,7 +6,7 @@ All scraped archives (HTML dumps, screenshots, and PDFs) are encrypted client-si
 
 ---
 
-## 🔒 Zero-Knowledge Security Model
+## Zero-Knowledge Security Model
 
 LinkHub utilizes a dual-key derivation structure based on your Master Password.
 
@@ -40,7 +40,7 @@ LinkHub utilizes a dual-key derivation structure based on your Master Password.
 
 ---
 
-## 🚀 Key Architectural Features
+## Key Architectural Features
 
 - **Asynchronous Scraping Worker**: Handles link ingestion via a Redis queue. Built in Go using `chromedp` (headless Chrome) to capture screenshots, compile print-to-PDFs, and download raw HTML pages.
 - **Content Extraction & Summarization**: Parse pages using `go-readability` to extract clean text. Summarizes and generates tags using local LLMs (via Ollama), with a local word-frequency NLP parser fallback if Ollama is offline.
@@ -49,7 +49,7 @@ LinkHub utilizes a dual-key derivation structure based on your Master Password.
 
 ---
 
-## 🛠️ Project Structure
+## Project Structure
 
 ```
 ├── backend/
@@ -70,7 +70,7 @@ LinkHub utilizes a dual-key derivation structure based on your Master Password.
 
 ---
 
-## ⚡ Quick Start
+## Quick Start
 
 LinkHub is designed to run in a containerized environment. 
 
@@ -97,7 +97,7 @@ Open your browser and navigate to **`http://localhost`** to start managing your 
 
 ---
 
-## 💻 Local Development Setup
+## Local Development Setup
 
 If you prefer to run services on your host machine for development:
 
@@ -126,7 +126,7 @@ The frontend will be available at **`http://localhost:5173`** and will automatic
 
 ---
 
-## 🧪 Pipeline Diagnostics
+## Pipeline Diagnostics
 
 To verify that the underlying vector extraction and cryptography layers run correctly on your machine, you can run the diagnostic pipeline test:
 
