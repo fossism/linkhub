@@ -84,7 +84,7 @@ export const decryptAsset = async (
   // Import key into Web Crypto API
   const aesKey = await window.crypto.subtle.importKey(
     'raw',
-    keyBytes as any,
+    keyBytes.buffer as ArrayBuffer,
     'AES-GCM',
     false,
     ['decrypt']
@@ -94,7 +94,7 @@ export const decryptAsset = async (
   const decryptedBuffer = await window.crypto.subtle.decrypt(
     {
       name: 'AES-GCM',
-      iv: ivBytes as any,
+      iv: ivBytes.buffer as ArrayBuffer,
       tagLength: 128 // 128 bits = 16 bytes tag
     },
     aesKey,

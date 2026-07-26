@@ -6,6 +6,8 @@ frontend/node_modules/
 # Local databases and object store volumes
 pgdata/
 miniodata/
+minio_bin/
+minio_data/
 
 # Local configuration and environment variables
 .env

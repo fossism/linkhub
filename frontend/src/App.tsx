@@ -60,7 +60,7 @@ export const App: React.FC = () => {
     setEncryptionKey(null);
   };
 
-  const API_URL = ((import.meta as any).env?.VITE_API_URL as string) || '';
+  const API_URL = import.meta.env.VITE_API_URL || '';
 
   // If authenticated, render Dashboard
   if (token && encryptionKey && user) {
