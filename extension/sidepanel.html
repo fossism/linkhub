@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<style>
+  html, body { margin: 0; padding: 0; height: 100%; background: #0b0f19; }
+  #bar {
+    display: flex; gap: 6px; align-items: center;
+    padding: 6px 8px; background: #0b0f19; color: #e2e8f0;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    font: 12px/1.4 'Segoe UI', system-ui, sans-serif;
+  }
+  #bar .title { color: #22d3ee; font-weight: 700; margin-right: auto; }
+  #bar button {
+    padding: 4px 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,.12);
+    background: rgba(255,255,255,.06); color: #e2e8f0; font-size: 11px; cursor: pointer;
+  }
+  #bar button:hover { border-color: #22d3ee; }
+  #frame { width: 100%; height: calc(100% - 33px); border: 0; background: #0b0f19; }
+  #fallback {
+    display: none; padding: 24px 16px; color: #94a3b8;
+    font: 13px/1.6 'Segoe UI', system-ui, sans-serif; text-align: center;
+  }
+  #fallback button {
+    margin-top: 12px; padding: 9px 18px; border: 0; border-radius: 8px;
+    background: linear-gradient(90deg, #22d3ee, #6366f1); color: #0b0f19;
+    font-weight: 700; cursor: pointer;
+  }
+</style>
+</head>
+<body>
+  <div id="bar">
+    <span class="title">LinkHub●</span>
+    <button id="reloadBtn" title="Reload dashboard">⟳</button>
+    <button id="tabBtn" title="Open in a full tab">⧉ Tab</button>
+  </div>
+  <div id="fallback">
+    <p>Could not embed the dashboard here (the browser blocked the frame).</p>
+    <button id="fallbackTab">Open dashboard in a tab instead</button>
+  </div>
+  <iframe id="frame" title="LinkHub dashboard"></iframe>
+  <script src="sidepanel.js"></script>
+</body>
+</html>

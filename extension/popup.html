@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body {
+    width: 340px; margin: 0; padding: 16px;
+    background: #0b0f19; color: #e2e8f0;
+    font: 13px/1.5 'Segoe UI', system-ui, sans-serif;
+  }
+  h1 { font-size: 16px; margin: 0 0 2px; color: #fff; }
+  h1 .dot { color: #22d3ee; }
+  .sub { color: #64748b; font-size: 11px; margin-bottom: 12px; }
+  .card {
+    background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.08);
+    border-radius: 12px; padding: 12px; margin-bottom: 10px;
+  }
+  label { display: block; font-size: 10px; font-weight: 700; letter-spacing: .06em;
+    text-transform: uppercase; color: #94a3b8; margin: 8px 0 4px; }
+  label:first-child { margin-top: 0; }
+  input, select {
+    width: 100%; padding: 8px 10px; border-radius: 8px;
+    border: 1px solid rgba(255,255,255,.1); background: #0f172a; color: #fff;
+    font-size: 13px; outline: none;
+  }
+  input:focus, select:focus { border-color: #22d3ee; }
+  button {
+    width: 100%; padding: 9px; margin-top: 8px; border: 0; border-radius: 8px;
+    font-size: 13px; font-weight: 700; cursor: pointer;
+  }
+  button:disabled { opacity: .5; cursor: default; }
+  .primary { background: linear-gradient(90deg, #22d3ee, #6366f1); color: #0b0f19; }
+  .ghost { background: rgba(255,255,255,.06); color: #e2e8f0;
+    border: 1px solid rgba(255,255,255,.1); }
+  .row { display: flex; gap: 8px; }
+  .row button { margin-top: 8px; }
+  .msg { font-size: 12px; margin-top: 8px; min-height: 18px; }
+  .msg.err { color: #f87171; }
+  .msg.ok { color: #34d399; }
+  .msg.info { color: #22d3ee; }
+  .bar { height: 6px; background: rgba(255,255,255,.08); border-radius: 4px;
+    margin-top: 8px; overflow: hidden; display: none; }
+  .bar > div { height: 100%; width: 0; background: linear-gradient(90deg, #22d3ee, #6366f1); }
+  .meta { display: flex; justify-content: space-between; align-items: center;
+    font-size: 11px; color: #94a3b8; margin-bottom: 4px; }
+  .meta button { width: auto; padding: 3px 10px; margin: 0; font-size: 11px; }
+  .hidden { display: none; }
+  .foot { text-align: center; margin-top: 6px; }
+  .foot a { color: #22d3ee; font-size: 11px; text-decoration: none; }
+</style>
+</head>
+<body>
+  <h1>LinkHub<span class="dot">●</span></h1>
+  <div class="sub">Self-hosted tab saver &amp; auto-organizer</div>
+
+  <!-- AUTH VIEW -->
+  <div id="authView" class="card">
+    <div class="row" style="margin-bottom:4px">
+      <button id="tabLogin" class="ghost" style="border-color:#22d3ee;color:#22d3ee">Sign In</button>
+      <button id="tabRegister" class="ghost">Create Account</button>
+    </div>
+    <label>Email</label>
+    <input id="email" type="email" placeholder="name@example.com" />
+    <label>Master Password</label>
+    <input id="password" type="password" placeholder="••••••••" />
+    <button id="authGo" class="primary">Sign In</button>
+    <div id="authMsg" class="msg"></div>
+  </div>
+
+  <!-- MAIN VIEW -->
+  <div id="mainView" class="hidden">
+    <div class="card">
+      <div class="meta"><span id="whoLabel"></span><button id="logoutBtn" class="ghost">Lock</button></div>
+      <div class="row">
+        <button id="saveWindow" class="primary">Save this window</button>
+        <button id="saveAll" class="ghost">Save all</button>
+      </div>
+      <div class="bar" id="saveBar"><div></div></div>
+      <div id="saveMsg" class="msg"></div>
+    </div>
+    <div class="card">
+      <label>Restore folder to tabs</label>
+      <select id="folderSel"><option value="">— load folders —</option></select>
+      <div class="row">
+        <button id="loadFolders" class="ghost">Load folders</button>
+        <button id="restoreBtn" class="primary">Open folder</button>
+      </div>
+      <div id="restoreMsg" class="msg"></div>
+    </div>
+  </div>
+
+  <!-- SETTINGS -->
+  <div class="card">
+    <label>LinkHub server URL</label>
+    <input id="apiBase" type="url" placeholder="http://localhost:5000" />
+    <button id="saveSettings" class="ghost">Save server URL</button>
+  </div>
+
+  <div class="foot"><a id="openDash" href="#">Open LinkHub dashboard →</a></div>
+  <div class="foot"><a id="openPanel" href="#">Open as side panel →</a></div>
+
+  <script src="crypto.js"></script>
+  <script src="common.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
