@@ -33,7 +33,7 @@ juggling: the server auto-files everything into folders.
 
 1. Start the LinkHub backend first (see `PROJECT_GUIDE.md` §6.2).
 2. Open `chrome://extensions`, enable **Developer mode**.
-3. **Load unpacked** → select this `extension/` folder.
+3. **Load unpacked** → select this repo folder (it holds `manifest.json`).
 4. Click the LinkHub toolbar icon → set server URL if needed → Sign In
    (same account as the web dashboard).
 

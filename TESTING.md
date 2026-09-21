@@ -23,14 +23,14 @@ The extension is only a remote control — the backend must be running first:
 
 1. Open `chrome://extensions` (Edge: `edge://extensions`, Brave: `brave://extensions`).
 2. Enable **Developer mode** (toggle, top-right).
-3. Click **Load unpacked** → select the `extension/` folder of this repo.
+3. Click **Load unpacked** → select this repo folder (it holds `manifest.json`).
 4. You should see "LinkHub Tab Saver 0.1.0" with no red errors.
 5. Click the puzzle-piece (🧩) toolbar button → pin **LinkHub Tab Saver** so its icon stays visible.
 
 ### Firefox (temporary test install)
 
 1. Open `about:debugging#/runtime/this-firefox` → **Load Temporary Add-on**.
-2. Select any file inside `extension/` (e.g. `manifest.json`).
+2. Select any file inside this repo folder (e.g. `manifest.json`).
 3. Note: temporary add-ons vanish on browser restart — reload it each session.
 4. If the popup looks broken, check §4 troubleshooting (service-worker differences).
 
@@ -106,7 +106,7 @@ The extension is only a remote control — the backend must be running first:
 |---|---|
 | Popup shows wrong message / button stuck | Right-click the popup → **Inspect** → Console tab |
 | Right-click save badge shows `!` | `chrome://extensions` → LinkHub **Details** → **Inspect views: service worker** → Console |
-| `Could not establish connection` / manifest red text on load | Reload unpacked; re-check `manifest.json` edits with `python3 -m json.tool extension/manifest.json` |
+| `Could not establish connection` / manifest red text on load | Reload unpacked; re-check `manifest.json` edits with `python3 -m json.tool manifest.json` |
 | 401 "Session expired" during save | Normal after 7 days or server secret change — sign in again in the popup |
 | Tabs saved (202) but stuck on `Ingesting…` | Backend/worker issue, not the extension: check backend terminal log and `PROJECT_GUIDE.md` §6.3 |
 | Testing against a LAN/prod server | Change server URL in popup **and** add its origin to `host_permissions` in `manifest.json`, then reload the extension |

@@ -6,7 +6,7 @@ JavaScript (variables, functions, `async/await`, `fetch`).
 
 **How to use this file:** do the lessons in order. Each ends with a
 checkpoint — don't move on until you see it. Your practice folder is
-`~/linkhub-learn/` (separate from the repo's `extension/` so you can't break
+`~/linkhub-learn/` (separate from this repo root so you can't break
 the real one). Final lesson maps everything you built to the real files.
 
 ---
@@ -176,7 +176,7 @@ const { encryptionKey, authKey } = await lhDeriveKeys(password, salt);
 // authKey       → sent to server as your "password"
 ```
 
-Copy `extension/crypto.js` into your practice folder and call `lhDeriveKeys`
+Copy `crypto.js` from this repo into your practice folder and call `lhDeriveKeys`
 from the console with any password+salt. Same inputs → same outputs (try it
 twice). Different salt → totally different keys.
 
@@ -302,7 +302,7 @@ using the correct console from the table. This skill is half the job.
 
 ## Lesson 10 — Capstone: read the real thing (30 min)
 
-You now know every idea in `extension/`. Read it in this order and notice how
+You now know every idea in this repo. Read it in this order and notice how
 small each file is:
 
 1. `manifest.json` — Lessons 1, 2, 4, 8 (one line per power).
